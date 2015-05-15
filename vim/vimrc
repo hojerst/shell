@@ -1,0 +1,35 @@
+" edit mode
+set nocompatible
+set bs=2
+set virtualedit=all          " allow to edit after end of line
+
+" tabs and indents
+set tabstop=4                " tab width
+set shiftwidth=4             " indent width (for auto indent)
+set expandtab                " convert tabs to spaces
+filetype plugin indent on    " use indention according to filetype
+
+" line styling
+set number                   " show line numbers
+
+" styling
+set ruler                    " show cursor position in bottom line
+set hlsearch                 " highlight searched
+set bg=dark                  " use colors suitable for dark backgrounds
+syn on                       " enable syntax highlighting
+colorscheme solarized        " set colorscheme to solarized
+
+" automatically remove trailing whitespace before write
+function! StripTrailingWhitespace()
+    normal mZ
+    %s/\s\+$//e
+    if line("'Z") != line(".")
+        echo "Stripped whitespace\n"
+        endif
+    normal `Z
+endfunction
+autocmd BufWritePre COMMIT_EDITMSG,.vimrc,*.js,*.java,*.groovy,*.xml,*.xslt,*.css,*.sh :call StripTrailingWhitespace()
+
+" show trailing whitespace and tabs that are not at start of line
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\|[^\t]\zs\t\+/
