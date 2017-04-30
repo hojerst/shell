@@ -4,7 +4,7 @@ MAINTAINER Stefan Hojer <stefan.hojer@gmail.com>
 
 # install additional software
 RUN apt-get update && \
-    apt-get install -y man vim git bash-completion most
+    apt-get install -y man vim git bash-completion curl dnsutils
 
 ADD profile/ /root
 ADD profile.d/ /etc/profile.d
