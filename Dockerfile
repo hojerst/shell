@@ -1,10 +1,9 @@
-FROM ubuntu:16.10
-
-MAINTAINER Stefan Hojer <stefan.hojer@gmail.com>
+FROM ubuntu:16.04
 
 # install additional software
 RUN apt-get update && \
-    apt-get install -y man vim git bash-completion curl dnsutils
+    apt-get install -y man vim git bash-completion curl dnsutils iproute2 && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD profile/ /root
 ADD profile.d/ /etc/profile.d
