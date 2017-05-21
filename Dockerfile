@@ -1,8 +1,9 @@
 FROM ubuntu:16.04
 
 # install additional software
-RUN apt-get update && \
-    apt-get install -y man vim git bash-completion curl dnsutils iproute2 && \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    apt-get install -y man vim git bash-completion curl dnsutils iproute2 iputils-ping && \
     rm -rf /var/lib/apt/lists/*
 
 ADD profile/ /root

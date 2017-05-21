@@ -1,4 +1,4 @@
-Docker image with customizations for bash.
+Very basic ubuntu based bash environment with tools for network analysis and common cli tasks
 
 Usage
 =====
