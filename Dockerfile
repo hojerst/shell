@@ -1,4 +1,6 @@
-FROM ubuntu:18.04
+ARG UBUNTU_VERSION=20.04
+
+FROM ubuntu:${UBUNTU_VERSION}
 
 # install additional software
 RUN export DEBIAN_FRONTEND=noninteractive && \
