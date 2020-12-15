@@ -1,0 +1,31 @@
+---
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "skopeo"
+    command: "skopeo"
+    args: [ "--version" ]
+  - name: "kubectl"
+    command: "kubectl"
+    args: [ "version", "--client" ]
+  - name: "vim"
+    command: "vim"
+    args: [ "--version" ]
+  - name: "curl"
+    command: "curl"
+    args: [ "--version" ]
+  - name: "ripgrep"
+    command: "rg"
+    args: [ "--version" ]
+  - name: "fzf"
+    command: "fzf"
+    args: [ "--version" ]
+  - name: "ping"
+    command: "ping"
+    args: [ "-V" ]
+  - name: "netcat"
+    command: "nc"
+    args: [ "-h" ]
+  - name: "http"
+    command: "http"
+    args: [ "--version" ]
